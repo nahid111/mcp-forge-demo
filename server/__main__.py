@@ -1,11 +1,12 @@
 import uvicorn
 
 from fastmcp import FastMCP
+from fastmcp.server.auth import BearerAuthProvider
+from fastmcp.server.auth.providers.bearer import RSAKeyPair
 
 from core.settings import settings
 from server.tools import get_weather
-from fastmcp.server.auth import BearerAuthProvider
-from fastmcp.server.auth.providers.bearer import RSAKeyPair
+
 
 # Generate a new key pair
 key_pair = RSAKeyPair.generate()

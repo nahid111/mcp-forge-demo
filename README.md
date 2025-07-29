@@ -15,6 +15,9 @@ uv sync --frozen
 
 # Run locally
 ```bash
+# run mcp forge gateway
+./start_gateway
+
 # run mcp weather server
 python -m server
 

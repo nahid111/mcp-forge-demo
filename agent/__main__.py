@@ -1,12 +1,10 @@
 import asyncio
 
 from langchain_mcp_adapters.client import MultiServerMCPClient
-from langchain_mcp_adapters.tools import load_mcp_tools
 from langgraph.prebuilt import create_react_agent
-from mcp import ClientSession
-from mcp.client.streamable_http import streamablehttp_client
 
 from agent.utils import print_messages
+from core.model_selector import get_langchain_model
 from core.settings import settings
 
 
@@ -37,7 +35,7 @@ else:
 async def main():
     client = MultiServerMCPClient(SERVER_CONFIG)
     tools = await client.get_tools()
-    agent = create_react_agent(settings.MODEL_NAME, tools)
+    agent = create_react_agent(get_langchain_model(), tools)
     response = await agent.ainvoke(
         {'messages': 'what is the weather in dhaka?'}
     )

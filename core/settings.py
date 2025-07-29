@@ -17,7 +17,7 @@ class Settings(BaseSettings):
     USE_BEDROCK: bool = os.environ.get('USE_BEDROCK', 'false').lower() == 'true'
     BEDROCK_MODEL_NAME: str = os.environ.get(
         'BEDROCK_MODEL_NAME',
-        'bedrock/anthropic.claude-3-5-sonnet-20240620-v1:0',
+        'anthropic.claude-3-5-sonnet-20240620-v1:0',
     )
     AWS_ACCESS_KEY_ID: str = os.environ.get('AWS_ACCESS_KEY_ID', '')
     AWS_SECRET_ACCESS_KEY: str = os.environ.get('AWS_SECRET_ACCESS_KEY', '')
