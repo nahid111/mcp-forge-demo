@@ -1,3 +1,28 @@
+# Install Dependencies
+```bash
+# create virtual environment
+python3 -m venv .venv
+
+# activate virtual environment
+source .venv/bin/activate
+
+#install uv
+pip install uv
+
+# install dependencies
+uv sync --frozen
+```
+
+# Run locally
+```bash
+# run mcp weather server
+python -m server
+
+# run langgraph agent
+python -m agent
+```
+
+
 # Code Quality
 
 The project uses `ruff` for code formatting and linting:
@@ -15,3 +40,4 @@ ruff check . --select I --fix
 # Fix unused imports
 ruff check . --select I,F401 --fix
 ```
+
