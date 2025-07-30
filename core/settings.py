@@ -24,7 +24,7 @@ class Settings(BaseSettings):
     AWS_SESSION_TOKEN: str = os.environ.get('AWS_SECRET_ACCESS_KEY', '')
 
     MCP_SERVER_HOST: str = os.environ.get('MCP_SERVER_HOST', 'localhost')
-    MCP_SERVER_PORT: int = int(os.environ.get('MCP_SERVER_URL', '5001'))
+    MCP_SERVER_PORT: int = int(os.environ.get('MCP_SERVER_URL', '5555'))
     USE_MCP_FORGE: bool = (
         os.environ.get('USE_MCP_FORGE', 'false').lower() == 'true'
     )

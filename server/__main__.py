@@ -24,6 +24,7 @@ token = key_pair.create_token(
     issuer='https://dev.example.com',
     audience='my-dev-server',
     scopes=['read', 'write'],
+    expires_in_seconds=172800,  # 2 days
 )
 
 
